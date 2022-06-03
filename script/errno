@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# display ERRNO corresponding to number or all if no number specified 
+# origin source from ...
+
+[ $# -eq 1 ] && re="$1([^0-9]|$)"
+echo "#include <errno.h>" |
+cpp -dD -CC |
+grep -E "^#define E[^ ]+ $re" |
+sed ':s;s#/\*\([^ ]*\) #/*\1_#;t s;' | column -t | tr _ ' ' |
+cut -c1-$(tput cols)
