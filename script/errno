@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # display ERRNO corresponding to number or all if no number specified 
-# origin source from ...
+# origin source from https://github.com/pixelb/scripts
 
 [ $# -eq 1 ] && re="$1([^0-9]|$)"
 echo "#include <errno.h>" |

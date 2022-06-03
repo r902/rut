@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# use python as calculator (as bc)
+
+python3 -i -c "from math import *"
